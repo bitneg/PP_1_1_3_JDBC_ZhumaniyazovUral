@@ -10,7 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 
-public class UserServiceImpl extends User implements UserService {
+public class UserServiceImpl extends Util implements UserService {
     private Connection connection=getConnection();
     private UserDao userDao =new UserDaoJDBCImpl();
     public void createUsersTable() throws SQLException {

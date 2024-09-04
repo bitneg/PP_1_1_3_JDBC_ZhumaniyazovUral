@@ -2,13 +2,12 @@ package jm.task.core.jdbc.model;
 
 import jm.task.core.jdbc.util.Util;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Table
-public class User extends Util {
+import javax.persistence.*;
+@Entity
+@Table(name="User")
+public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Override
@@ -21,13 +20,13 @@ public class User extends Util {
                 '}';
     }
 
-    @Column
+    @Column(name = "name")
     private String name;
 
-    @Column
+    @Column(name="lastName")
     private String lastName;
 
-    @Column
+    @Column(name="age")
     private Byte age;
 
     public User() {
